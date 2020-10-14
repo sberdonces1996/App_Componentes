@@ -46,7 +46,7 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    final card = Card(
         child: Column(
       children: <Widget>[
         FadeInImage(
@@ -61,5 +61,24 @@ class CardPage extends StatelessWidget {
             padding: EdgeInsets.all(10.0), child: Text('Paisaje Natural')),
       ],
     ));
+
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                spreadRadius: 2.0,
+                offset: Offset(2.0, 10.0))
+          ]
+          //color: Colors.blue
+          ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: card,
+      ),
+    );
   }
 }
