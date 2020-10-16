@@ -80,12 +80,20 @@ class _InputPageState extends State<InputPage> {
     return TextField(
         obscureText: true,
         decoration: InputDecoration(
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
-            hintText: 'Password',
-            labelText: 'Password',
-            suffixIcon: Icon(Icons.lock_open),
-            icon: Icon(Icons.lock)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+          hintText: 'Password',
+          labelText: 'Password',
+          suffixIcon: new IconButton(
+            icon: new Icon(Icons.bookmark),
+            onPressed: () {
+              Icon(Icons.lock);
+            },
+          ),
+          icon: const Padding(
+            padding: const EdgeInsets.only(top: 15.0),
+            child: const Icon(Icons.lock),
+          ),
+        ),
         onChanged: (valor) => setState(() {
               _email = valor;
             }));
